@@ -1,0 +1,35 @@
+// ===================================================================================
+// CARDS — grilla de promociones y tarjeta base
+// ===================================================================================
+@use "sass:color";
+@import '../variables';
+
+.cards {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: $space-3;
+  @media (max-width: 980px) { grid-template-columns: repeat(2, 1fr); }
+  @media (max-width: 640px) { grid-template-columns: 1fr; }
+}
+
+.card {
+  display: flex; flex-direction: column; background: $color-blanco;
+  border: 1px solid rgba($color-cafe-oscuro,.08); border-radius: $radius-lg;
+  overflow: hidden; box-shadow: $sombra-suave;
+
+  &__img {
+    height: 160px; display: grid; place-items: center; font-weight: $font-weight-bold;
+    letter-spacing: .06em;
+    color: color.mix($color-texto, $color-cafe-oscuro, $weight: 35%);
+    background: linear-gradient(120deg, rgba($color-beige,.55), rgba($color-acento,.85));
+    border-bottom: 1px solid rgba($color-cafe-oscuro,.06);
+  }
+
+  &__body { padding: $space-3; }
+
+  h3 { margin: 0 0 $space-1 0; color: $color-cafe-oscuro; }
+  p  { margin: 0 0 $space-2 0; color: color.mix($color-texto, $color-cafe-oscuro, $weight: 45%); }
+
+  .price-row { display: flex; align-items: center; justify-content: space-between; gap: $space-2; margin-top: $space-2; }
+  .price { font-weight: $font-weight-bold; color: $color-cafe; }
+}
+
+.promo { border-color: rgba($color-cafe,.18); }

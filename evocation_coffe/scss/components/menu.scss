@@ -1,0 +1,41 @@
+// ===================================================================================
+// SECCIONES — estilos visuales y footer
+// ===================================================================================
+@use "sass:color";
+@import '../variables';
+
+.section {
+  scroll-margin-top: 90px; text-align: center;
+  h2 { font-weight: $font-weight-bold; letter-spacing: .03em; margin-bottom: $space-2; }
+  .section__lead { margin-bottom: $space-4; max-width: 600px; margin-inline: auto; }
+}
+
+#promociones {
+  background: $color-acento;
+  .card { transition: transform .15s ease, box-shadow .15s ease; &:hover { transform: translateY(-4px); box-shadow: $sombra-media; } }
+}
+
+#historia {
+  background: $color-crema;
+  .history {
+    max-width: 800px; margin-inline: auto; text-align: left;
+    line-height: 1.7; color: color.mix($color-texto, $color-cafe-oscuro, $weight: 40%);
+    p + p { margin-top: $space-2; }
+    strong { color: $color-cafe-oscuro; font-weight: $font-weight-bold; }
+  }
+}
+
+#ubicacion {
+  background: $color-beige;
+  .map-wrapper { margin-top: $space-3; transition: box-shadow .15s ease; &:hover { box-shadow: $sombra-media; } }
+}
+
+#contacto {
+  background: $color-crema;
+  .contact-form { max-width: 600px; margin-inline: auto; button { margin-top: $space-2; width: 100%; } }
+}
+
+.site-footer {
+  background: $color-cafe-oscuro; color: $color-blanco; text-align: center; padding: $space-3 0; font-size: .9rem;
+  p { margin: 0; span { color: color.scale($color-acento, $lightness: 25%); } }
+}
